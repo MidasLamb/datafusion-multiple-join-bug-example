@@ -1,0 +1,18 @@
+[package]
+name = "fus"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.71"
+datafusion = "26.0.0"
+datafusion-remote-tables = {git = "https://github.com/splitgraph/seafowl.git"}
+tokio = { version = "1.28.2", features = ["full"] }
+
+[patch."https://github.com/splitgraph/connector-x"]
+connectorx = { git = "https://github.com/MidasLamb/connector-x.git", branch = "mysql-bit" }
+
+# [patch.crates-io]
+# mysql_common = { path = "/home/midas/work/external/rust_mysql_common" }
